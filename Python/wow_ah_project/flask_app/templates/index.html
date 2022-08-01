@@ -12,12 +12,11 @@
 <body>
     <h1>Hello World</h1>
 
-
-    <form id="ah_query" class="container" onsubmit="search(event)">
+    <form id="ah_query" class="container" action="/results" method="post">
         <input type="text" name="query">
         <input type="submit" value="test it out">
     </form>
-    
+    <div>The Oathkeeper = 31299</div>
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
