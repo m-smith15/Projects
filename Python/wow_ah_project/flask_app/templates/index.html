@@ -10,13 +10,80 @@
     <title>Crafter's Corner</title>
 </head>
 <body>
-    <h1>Hello World</h1>
-
-    <form id="ah_query" class="container" action="/results" method="post">
-        <input type="text" name="query">
-        <input type="submit" value="test it out">
-    </form>
-    <div>The Oathkeeper = 31299</div>
+    <h1>Crafterz Corner</h1>
+    <hr>
+        <div class="realmOptions">
+            <form id="ah_query" class="container" action="/results" method="post">
+                <label for="selectRealm">Select Realm from Dropdown</label>
+                <select name="selectRealm" value="Select Realm">
+                    {% for item in realmList %}
+                    <option value="{{item[1]}}">{{item[0]}}</option>
+                    {% endfor %}
+                </select>
+                <input type="text" name="query">
+                <input type="submit" value="test it out">
+            </form>
+        </div>
+    <hr>
+    <div class="helpWrapper">
+        <div class="items container">
+            <div>
+                <h3>Items</h3>
+                <ul>
+                    <li>The Oathkeeper | 31299</li>
+                </ul>
+            </div>
+        </div>
+        <div class="herbs container">
+        <div>
+            <h3>WotLK Herbs</h3>
+            <ul>
+                <li>Goldclover | 36901</li>
+                <li>Tiger Lily | 36904</li>
+                <li>Talandra's Rose | 36907</li>
+                <li>Adder's Tongue | 36903</li>
+                <li>Lichbloom | 36905</li>
+                <li>Icethorn | 36906</li>
+                <li>Frost Lotus | 36908</li>
+            </ul>
+        </div>
+        <div>
+            <h3>WotLK Potions</h3>
+            <ul>
+                <li>Resurgent Healing Potion | 53838</li>
+                <li>Icy Mana Potion | 53839</li>
+                <li>Potion of Nightmares | 53900</li>
+                <li>Indestructible Potion | 53905</li>
+                <li>Runic Healing Potion | 53836</li>
+                <li>Runic Mana Potion | 53837</li>
+            </ul>
+        </div>
+        <div>
+            <h3>WotLK Elixirs</h3>
+            <ul>
+                <li>Wrath Elixir | 53841</li>
+                <li>Spellpower Elixir | 53842</li>
+                <li>Guru's Elixir | 53848</li>
+                <li>Elixir of Mighty Strength | 54218</li>
+                <li>Elixir of Spirit | 53847</li>
+                <li>Elixir of Mighty Fortitude | 53898</li>
+                <li>Elixir of Mighty Agility | 53840</li>
+                <li>Elixir of Mighty Thoughts | 60367</li>
+            </ul>
+        </div>
+        <div>
+            <h3>WotLK Flasks</h3>
+            <ul>
+                <li>Flask of Endless Rage | 53903</li>
+                <li>Flask of Pure Mojo | 54213</li>
+                <li>Flask of Stoneblood | 53902</li>
+                <li>Flask of the Frost Wyrm | 53901</li>
+                <li>Lesser Flask of Toughness | 53899</li>
+                <li>Lesser Flask of Resistance | 62213</li>
+            </ul>
+        </div>
+        </div>
+    </div>
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

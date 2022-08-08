@@ -9,7 +9,20 @@ body {
 #rawBlock{
     width:25%;
 }
-
 #resultBlock {
+    display:flex;
+}
+.realmOptions {
+    display:flex;
+}
+.herbs{
+    display:flex;
+    text-align:right;
+}
+ul{
+    list-style:none;
+}
+.items{
+    text-align:center;
     display:flex;
 }
