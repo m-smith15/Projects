@@ -14,12 +14,19 @@
     <hr>
         <div class="realmOptions">
             <form id="ah_query" class="container" action="/results" method="post">
-                <label for="selectRealm">Select Realm from Dropdown</label>
+                <label for="selectRealm">Select Realm from Dropdown </label>
                 <select name="selectRealm" value="Select Realm">
                     {% for item in realmList %}
                     <option value="{{item[1]}}">{{item[0]}}</option>
                     {% endfor %}
-                </select>
+                </select> <br>
+                <label for="selectFaction">Select Faction AH from Dropdown </label>
+                <select name="selectFaction" value="Select Faction">
+                    <option value="2">Alliance AH</option>
+                    <option value="6">Horde AH</option>
+                    <option value="7">Booty Bay AH</option>
+                </select> <br>
+                <label for="query">Item you'd like to search for: </label>
                 <input type="text" name="query">
                 <input type="submit" value="test it out">
             </form>

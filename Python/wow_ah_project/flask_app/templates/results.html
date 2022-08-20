@@ -15,9 +15,12 @@
     <div id="resultBlock">
         <div id="rawBlock">
             <h1>Raw Results</h1> 
-            {% for result in results %}
-            <div class="container">{{result['buyout']}}g | {{result['quantity']}} on AH | {{result['time_left']}}</div>
+            {{ pagination.info }}
+            {{ pagination.links }}
+            {% for result in pages.items %}
+            <div class="container">{{ loop.index + pagination.skip }} | {{result['buyout']}}g | {{result['quantity']}} on AH | {{result['time_left']}}</div>
             {% endfor %}
+            {{ pagination.links }}
         </div>
         <div id="summationBlock" class="container">
             <h1>Summation</h1>
@@ -28,6 +31,7 @@
     <hr>
     <div id="{{itemSearched}}" class="wowhead-tooltip tooltip-slider wowhead-tooltip-width-restriction wowhead-tooltip-width-320" style="float: left; padding-top: 1px; width: 320px; visibility: visible;" data-visible="yes"></div>
     <a href="#" data-wowhead="item={{itemSearched}}"></a>
+    <div><a href="https://www.wowhead.com/item=95857&xml"></a></div>
     <hr>
     <a class="btn" href="/" domain="classic">Search Again?</a>
 </body>
