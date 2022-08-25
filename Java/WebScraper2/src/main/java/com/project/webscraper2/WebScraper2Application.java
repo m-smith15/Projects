@@ -36,6 +36,7 @@ public class WebScraper2Application implements CommandLineRunner {
 		System.out.println(scraper + " scraper");
 		page = scraper.getWebPage("https://divinityoriginalsin2.wiki.fextralife.com/All+Skills");
 		
+		//building list of schools based on all skills page
 		List<DomText> schools = page.getByXPath("//h3/a/text()");
 		System.out.println("Spell schools query results");
 		System.out.println(schools);
@@ -66,6 +67,7 @@ public class WebScraper2Application implements CommandLineRunner {
 			int x = 1;
 			while(x < (spellsonPage.size())){
 				
+				//creating a runner var to help maneuver due to table structure differing between rows and tables
 				int xPlus1 = x + 1;
 				
 				System.out.println("---Name---");
@@ -98,9 +100,11 @@ public class WebScraper2Application implements CommandLineRunner {
 				if(descriptionString == "[]") {
 					descriptionString = spellScraper.getWebPage("https://divinityoriginalsin2.wiki.fextralife.com/"+listofschools.get(i)+"+Skills").getByXPath("//tbody/tr["+x+"]/td/text()").toString();
 				}
+				//scoundrel specific
 				if(descriptionString == "[]") {
 					descriptionString = spellScraper.getWebPage("https://divinityoriginalsin2.wiki.fextralife.com/"+listofschools.get(i)+"+Skills").getByXPath("//tbody/tr["+x+"]/td[2]//text()").toString();
 				}
+				//sql limit on string (varchar) is 255 - cutting it off if it reaches that
 				if(descriptionString.length() > 255) {
 					descriptionString = descriptionString.substring(0 , 255);
 				}
@@ -118,6 +122,7 @@ public class WebScraper2Application implements CommandLineRunner {
 				System.out.println("---Memory Slot---");
 				List<DomText> memorySlots = spellScraper.getWebPage("https://divinityoriginalsin2.wiki.fextralife.com/"+listofschools.get(i)+"+Skills").getByXPath("//tbody/tr["+xPlus1+"]/td[2]/text()");
 				String memorySlotsString = memorySlots.toString();
+				//scoundrel table
 				if(memorySlotsString == "[]") {
 					memorySlotsString = spellScraper.getWebPage("https://divinityoriginalsin2.wiki.fextralife.com/"+listofschools.get(i)+"+Skills").getByXPath("//tbody/tr["+xPlus1+"]/td[1]/text()").toString();
 				}
@@ -125,6 +130,7 @@ public class WebScraper2Application implements CommandLineRunner {
 				
 				System.out.println("---AP---");														//"//tbody/tr[4]/td[3]/img/@alt"		// first in aero is hyperlinked "//tbody/tr[4]/td[3]/a/img/@alt"
 				String actionPointsString = "";
+				//the first item in aero is hyperlinked....accounting for that. Revisit this later probably a better way to approach this.
 				if(listofschools.get(i) == listofschools.get(0) && x == 1) {
 					List<DomText> actionPoints = spellScraper.getWebPage("https://divinityoriginalsin2.wiki.fextralife.com/"+listofschools.get(i)+"+Skills").getByXPath("//tbody/tr["+xPlus1+"]/td[3]/a/img/@src");	
 					actionPointsString = actionPoints.toString();
@@ -170,6 +176,7 @@ public class WebScraper2Application implements CommandLineRunner {
 				if(sourcePointsString.contains("-")){
 					sourcePointsString = "0";
 				}
+				//scoundrel...
 				if(sourcePointsString == "[]") {
 					sourcePointsString = spellScraper.getWebPage("https://divinityoriginalsin2.wiki.fextralife.com/"+listofschools.get(i)+"+Skills").getByXPath("//tbody/tr["+xPlus1+"]/td[4]/img/@src").toString();
 					int startIndex = sourcePointsString.indexOf("/SP");
@@ -203,6 +210,7 @@ public class WebScraper2Application implements CommandLineRunner {
 							endIndex = resistanceString.indexOf(".png");
 						}
 					resistanceString = resistanceString.substring(startIndex + 6, endIndex);
+					//armor type check
 						if(resistanceString.contains("magic")) {
 							resistanceString = "Magic Armor";
 						} else {
@@ -226,13 +234,9 @@ public class WebScraper2Application implements CommandLineRunner {
 					rangeString = "0";
 				}
 				listofspells.add(rangeString);
+				
+			//note to self - leaving these in for debugging if needed later. Def wondering if I need them at all anymore. 
 			
-			
-			//page.getByXPath("//tbody/tr[1]/td[1]/text()");
-			
-//			(String name, String description, String requiredLevel, String memorySlots,
-//					String actionPoints, String sourcePoints, String cooldown, String resist, String scale,
-//					String area)
 			
 //			System.out.println(nameString);
 //			System.out.println(descriptionString);
@@ -270,15 +274,8 @@ public class WebScraper2Application implements CommandLineRunner {
 		System.out.println("incrementing i from " + i + "to " + i+1 + "");
 		i++;
 	}
-		
-		
-		
+			
 	}
-//	
-//	public void createSpell(String name, String description, String requiredLevel, String memorySlots,
-//			String actionPoints, String sourcePoints, String cooldown, String resist, String scale,
-//			String area) 
 
-	
 }
 
