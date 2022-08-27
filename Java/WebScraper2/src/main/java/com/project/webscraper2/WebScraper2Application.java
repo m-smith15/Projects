@@ -70,6 +70,9 @@ public class WebScraper2Application implements CommandLineRunner {
 				//creating a runner var to help maneuver due to table structure differing between rows and tables
 				int xPlus1 = x + 1;
 				
+				System.out.println("---School---");
+				String schoolString = listofschools.get(i);
+				
 				System.out.println("---Name---");
 				List<DomText> spellName = spellScraper.getWebPage("https://divinityoriginalsin2.wiki.fextralife.com/"+listofschools.get(i)+"+Skills").getByXPath("//tbody/tr["+x+"]/td[1]/h4/a/text()");
 				String nameString = spellName.toString();
@@ -262,10 +265,10 @@ public class WebScraper2Application implements CommandLineRunner {
 			//webScraperService.saveSpell(spellToBeSaved);
 			
 			//(nameString, descriptionString, reqLevelString, memorySlotsString, rangeString, sourcePointsString, cooldownString, resistanceString, scaleString, apString);
-			String sql = "INSERT INTO spells (name, description, requiredLevel, memorySlots, actionPoints, sourcePoints, cooldown, resist, scale, area) VALUES (?,?,?,?,?,?,?,?,?,?)";
-			
+			String sql = "INSERT INTO spells (school, name, description, required_level, memory_slots, action_points, source_points, cooldown, resist, scale, area) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+			//System.out.println(sql);
 			System.out.println("Attempting to add " + nameString);
-			int result = jdbcTemplate.update(sql, nameString, descriptionString, reqLevelString, memorySlotsString, actionPointsString, sourcePointsString, cooldownString, resistanceString, scaleString, rangeString);
+			int result = jdbcTemplate.update(sql, schoolString, nameString, descriptionString, reqLevelString, memorySlotsString, actionPointsString, sourcePointsString, cooldownString, resistanceString, scaleString, rangeString);
 			
 			if(result > 0) {
 				System.out.println("new row was inserted!!");
