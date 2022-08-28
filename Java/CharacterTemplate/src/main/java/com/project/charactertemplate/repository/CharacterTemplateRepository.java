@@ -12,6 +12,6 @@ import com.project.charactertemplate.model.CharacterTemplate;
 public interface CharacterTemplateRepository extends CrudRepository<CharacterTemplate, Long> {
 
 	List<CharacterTemplate> findAll();
-	Optional<CharacterTemplate> findByName(String name);
+	Optional<CharacterTemplate> findById(Long id);
 	
 }

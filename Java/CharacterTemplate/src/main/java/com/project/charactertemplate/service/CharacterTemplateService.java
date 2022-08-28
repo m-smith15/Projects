@@ -20,8 +20,8 @@ public class CharacterTemplateService {
 		return characterTemplateRepository.findAll();
 	}
 	
-	public CharacterTemplate singleCharacter(String name) {
-		Optional<CharacterTemplate> optionalCharacter = characterTemplateRepository.findByName(name);
+	public CharacterTemplate singleCharacter(Long id) {
+		Optional<CharacterTemplate> optionalCharacter = characterTemplateRepository.findById(id);
 			if(optionalCharacter.isPresent()) {
 				return optionalCharacter.get();
 			} else {

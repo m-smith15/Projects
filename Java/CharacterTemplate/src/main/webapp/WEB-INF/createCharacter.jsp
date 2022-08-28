@@ -84,6 +84,7 @@
 			<button type="submit" class="btn">Create!</button>
 		</form:form>
 	</div>
+	<a class="btn" href="/home">Back to home?</a>
 
 </body>
 </html>

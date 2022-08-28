@@ -20,6 +20,10 @@
 <title>Home</title>
 </head>
 <body style="background-color: steelblue;">
+<p>All Spell data here was scraped using a <a href="">web scraper</a> that scraped the DOS2 wiki! Some of the data is incomplete, so bear with me while I continue to fine-tune<br>
+A big thank you to the folks at <a href="https://divinityoriginalsin2.wiki.fextralife.com/Divinity+Original+Sin+2+Wiki">The Divinity Original Sin 2 Wiki</a>
+who built, contributed, and have maintained the wiki I pulled the data from!</p>
+<hr>
 
 	<h1>Select from a list of characters already created:</h1>
 	<div class="container" style="background-color:cadetblue;">
