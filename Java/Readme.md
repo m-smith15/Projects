@@ -34,7 +34,7 @@
 
 ## Usage
  - Dream up a character idea that sounds fun to play!
- - Create that on the site, and allocate points to spell school's. The spells you're able to learn at those level breakpoints will be displayed!
+ - Create that on the site, and allocate points to spell schools. The spells you're able to learn at those level breakpoints will be displayed!
  - Save the character to reference later!
 
 ## Project Status
