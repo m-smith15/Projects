@@ -16,7 +16,7 @@ const Main = (props) => {
     }, []);
 
     const removeFromDom = goalId => {
-        setGoal(goal.filter(goal => goal._id != goalId));
+        setGoal(goal.filter(goal => goal._id !== goalId));
     }
 
     return(
