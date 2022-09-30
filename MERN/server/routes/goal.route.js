@@ -1,7 +1,9 @@
 const GoalController = require('../controllers/goal.controller');
+const UserController = require('../controllers/user.controller')
+
 
 module.exports = function(app){
-    app.get('/api', GoalController.index);
+    app.get('/api', UserController.index);
     app.post('/api/goal', GoalController.createGoal);
     app.get('/api/goal', GoalController.getAllGoals);
     // app.get('/api/goal/:id', GoalController.getGoal);

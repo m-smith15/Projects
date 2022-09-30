@@ -6,8 +6,6 @@ const port = 8000;
 //requiring the techs - express, cors, 
 require('./server/config/mongoose.config');
 
-const jwt = require("jsonwebtoken");
-
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
