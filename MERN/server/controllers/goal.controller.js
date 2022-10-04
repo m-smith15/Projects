@@ -1,6 +1,10 @@
 const { Goal } = require('../models/goal.model');
 
-
+// module.exports.index = (request, response) => {
+//     response.json({
+//         message: "You've pinged USER the index!"
+//     });
+// }
 module.exports.createGoal = (request, response) => {
     const { goalType, goal, timeToCompletion, challenges } = request.body;
     Goal.create({
