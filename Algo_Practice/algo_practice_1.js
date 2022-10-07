@@ -8,21 +8,38 @@
 // round length, pop items before "middle"
 // potential edge cases - empty, length 1, length odd, length even
 
+//its a singly linked list not an arry
+
+
+
 function middleNode(head){
     results = [];
-    if(head.length == 0 || head.length == 1){
+    let length = 0;
+    while(this.next){
+        length++;
+    }
+    let dest = 0;
+
+    if(length <= 1){
         // console.log("0 or 1")
         return head;
     }
     else if(head.length % 2 > 0){ //handling Odd
         // console.log("odd")
-        results = head.splice(head[Math.floor(head.length/2)-1])
-        return results;
+        dest = (head[Math.floor(head.length/2)-1])
     }else{
-        // console.log("else")
-        results = head.splice(head[Math.ceil(head.length/2)-1])
-        return results;
+        // console.log("else") / even
+        dest = (head[Math.ceil(head.length/2)-1])
     }
+
+    let runner = 0;
+    while(runner < dest){
+        this.head = this.next;
+        runner++;
+    }
+
+    return this.head;
+
 }
 
 head1 = [1,2,3,4,5]
