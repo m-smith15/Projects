@@ -15,12 +15,9 @@
     <div id="resultBlock">
         <div id="rawBlock">
             <h1>Raw Results</h1> 
-            {{ pagination.info }}
-            {{ pagination.links }}
             {% for result in results %}
-            <div class="container">{{ loop.index + pagination.skip }} | {{result['buyout']}}g | {{result['quantity']}} on AH | {{result['time_left']}}</div>
+            <div class="container">| {{result['buyout']}}g | {{result['quantity']}} on AH | {{result['time_left']}}</div>
             {% endfor %}
-            {{ pagination.links }}
         </div>
         <div id="summationBlock" class="container">
             <h1>Summation</h1>

@@ -81,9 +81,12 @@ def searching():
             results.append(auction)
 
     #rounding total results
-    resultsAverage = round(resultsTotal / resultsQuantity, 2)
-    print(resultsAverage)
-    print(int(resultsTotal))
+    if resultsTotal > 0:
+        resultsAverage = round(resultsTotal / resultsQuantity, 2)
+        print(resultsAverage)
+        print(int(resultsTotal))
+    else:
+        resultsAverage = "n/a "
 
 
     sortedResults = sorted(results, key=lambda d: d['buyout'])
@@ -95,28 +98,28 @@ def searching():
 
 # ----------- pagination building  -------------
 
-    if page and page.isdigit():
-        page = int(page)
-    else:
-        page = 1
-    #sortedResults = sortedResults.paginate(page=page, per_page=10)
-    PER_PAGE = 3
-    pagination = Pagination(page=page, per_page=PER_PAGE, total=int(resultsTotal), search= True, record_name='query results')
-    i=(page-1)*PER_PAGE
-    sortedResults1=sortedResults[i:i+5]
-    print(sortedResults1)
+    # if page and page.isdigit():
+    #     page = int(page)
+    # else:
+    #     page = 1
+    # #sortedResults = sortedResults.paginate(page=page, per_page=10)
+    # PER_PAGE = 3
+    # pagination = Pagination(page=page, per_page=PER_PAGE, total=int(resultsTotal), search= True, record_name='query results')
+    # i=(page-1)*PER_PAGE
+    # sortedResults1=sortedResults[i:i+5]
+    # print(sortedResults1)
     # print(pagination.items)
 
     print("------testing--------")
-    testing = LimitOffsetResultPaginator(sortedResults).paginate(limit=3, offset=0, count=int(resultsTotal))
-    print(testing)
+    # testing = LimitOffsetResultPaginator(sortedResults).paginate(limit=3, offset=0, count=int(resultsTotal))
+    # print(testing)
 
 
     #resultsJson = json.dumps(results)
     #print(sortedResults)
     # we must keep in line with JSON format.
     # requests has a method to convert the data coming back into JSON.
-    return render_template("results.html", results = sortedResults1, quantity = resultsQuantity, itemSearched = itemSearched, average = resultsAverage, pagination=pagination)
+    return render_template("results.html", results = sortedResults, quantity = resultsQuantity, itemSearched = itemSearched, average = resultsAverage)
 
 # @app.route('/results')
 # def search_results():
