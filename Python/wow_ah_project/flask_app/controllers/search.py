@@ -1,11 +1,11 @@
-from typing import ItemsView
 import requests
 import os
 from flask import render_template, redirect, session, jsonify, request, json
 from flask_app import app
 from flask_paginate import Pagination, get_page_parameter
+#rom rest_framework.views.paginations import LimitOffsetResultPaginator
 
-@app.route('/')
+@app.route('/search')
 def search_page():
     print("Client ID is " + os.environ.get('Client_ID'))
     print("Client Secret is " + os.environ.get('Client_Secret'))
@@ -90,25 +90,64 @@ def searching():
     page = request.args.get('page')
     print(sortedResults)
 
-# ----------- pagination building 
+    print(page)
 
-    # if page and page.isdigit():
-    #     page = int(page)
-    # else:
-    #     page = 1
-    # sortedResults = sortedResults.paginate(page=page, per_page=10)
-    # pagination = Pagination(page=page, total=int(resultsTotal), search= True, record_name='query results')
-    # print(sortedResults)
+
+# ----------- pagination building  -------------
+
+    if page and page.isdigit():
+        page = int(page)
+    else:
+        page = 1
+    #sortedResults = sortedResults.paginate(page=page, per_page=10)
+    PER_PAGE = 3
+    pagination = Pagination(page=page, per_page=PER_PAGE, total=int(resultsTotal), search= True, record_name='query results')
+    i=(page-1)*PER_PAGE
+    sortedResults1=sortedResults[i:i+5]
+    print(sortedResults1)
     # print(pagination.items)
+
+    print("------testing--------")
+    testing = LimitOffsetResultPaginator(sortedResults).paginate(limit=3, offset=0, count=int(resultsTotal))
+    print(testing)
 
 
     #resultsJson = json.dumps(results)
     #print(sortedResults)
     # we must keep in line with JSON format.
     # requests has a method to convert the data coming back into JSON.
-    return render_template("results.html", results = sortedResults, quantity = resultsQuantity, itemSearched = itemSearched, average = resultsAverage)
+    return render_template("results.html", results = sortedResults1, quantity = resultsQuantity, itemSearched = itemSearched, average = resultsAverage, pagination=pagination)
 
-@app.route('/results')
-def search_results():
+# @app.route('/results')
+# def search_results():
 
-    return render_template("results.html")
+#     return render_template("results.html")
+
+# @app.route('/retrieve_data')
+# def retrieve():
+#     PER_PAGE=5
+#     connection = MongoClient()
+#     db=connection.rheoML
+#     fs = gridfs.GridFS(db)
+#     search = False
+#     q = request.args.get('q')
+#     if q:
+#         search = True
+#     try:
+#         page = int(request.args.get('page', 2))
+#     except ValueError:
+#         page = 1
+#     List=fs.list()
+#     pagination = Pagination(page=page,per_page=PER_PAGE, total=len(List), search=search, record_name='List')
+#     #return   render_template("retrieveFile.html",List=List,fs=fs,form="submitIt",pagination=pagination,)
+
+#     try:
+#     page = int(request.args.get('page', 1))
+# except ValueError:
+#     page = 1
+
+# List=fs.list()
+# i=(page-1)*PER_PAGE
+# List1=List[i:i+5]
+# pagination = Pagination(page=page,per_page=PER_PAGE, total=len(List), search=search, record_name='List')
+# return render_template("retrieveFile.html",List=List1,fs=fs,form="submitIt",pagination=pagination,)
