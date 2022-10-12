@@ -41,5 +41,4 @@
  - Create a user and subscribe to a magazine! Add a magazine to the database
 
 ## Acknowledgements
-- A huge thank you to the folks at [Divinity Original Sin 2 Wiki](https://divinityoriginalsin2.wiki.fextralife.com/Divinity+Original+Sin+2+Wiki) for creating and maintaining the site!
 - A big thank you to the folks who created [this template](https://github.com/ritaly/README-cheatsheet)
