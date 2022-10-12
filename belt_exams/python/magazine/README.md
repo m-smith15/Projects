@@ -1,5 +1,5 @@
 # Magazine belt exam
-  - The prompt for this exam was to build a working application with Login/Registration page along with a fully CRUD model revolving magazines. Users can Create, Read, Update, and Delete magazines
+  - The prompt for this exam was to build a working application with Login/Registration page along with a fully CRUD model revolving magazines. There is also the ability for users to "subscribe" to magazines. The user, magazine, and subscriptions are stored in a mySQL workbench datatbase on the back end.
 
 ## Table of Contents
 * [General Info](#general-information)
