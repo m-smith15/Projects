@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+</head>
+<body>
+    <h1>Update Account Info</h1>
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <form action="/user/update" method="post">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" value="{{user_info.first_name}}"><br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" value="{{user_info.last_name}}"><br>
+        <label for="email">Email:</label>
+        <input type="text" name="email" value="{{user_info.email}}"><br>
+        <input type="submit" value="Update">
+    </form>
+    <hr>
+    <h1>Users Magazins</h1>
+    {% for result in users_magazines %}
+    <p>{{result.title}} <a href="/magazine/delete/{{ result['magazine.id'] }}">Delete</a> <br>
+    {% for count in subscribers %}
+    {% if result['magazine.id'] == count.magazine_id %}
+    subscribers: {{count.count}}
+    {% endif %}
+    {% endfor %}</p>
+    {% endfor %}
+
+
+
+    <hr>
+    <a href="/magazine/new">Add magazine</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>

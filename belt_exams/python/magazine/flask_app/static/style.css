@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container{
+    background-color:steelblue;
+    border:solid black;
+    margin-top:5%;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>{{session.first_name}} wont you look at this dashboard?</h1>
+    <hr>
+    <h2>Just look at these magazines:</h2>
+    <div>
+        {% for result in get_magazines %}
+        <p><a href="/show/{{result.id}}">{{result.title}}</a> added by {{result.first_name}} {{result.last_name}} <a href="/subscribe/{{result.id}}">Subscribe</a></p>
+        {% endfor %}
+    </div>
+    <hr>
+
+    <a href="/magazine/new">Add magazine</a>
+    <a href="/user/account">Account</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>

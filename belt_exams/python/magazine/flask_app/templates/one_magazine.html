@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Magazine</title>
+</head>
+<body>
+    <h1>{{get_magazine[0].title}}</h1>
+    <p>Added by {{get_magazine[0].first_name}} {{get_magazine[0].last_name}}</p>
+    <p>Description:</p>
+    <p>{{get_magazine[0].description}}</p>
+
+    <hr>
+    <h1>Subscriptions</h1>
+    {% for sub in get_subscriptions %}
+    <p>{{sub.first_name}} {{sub.last_name}}</p>
+    {% endfor %}
+    <a href="/magazine/new">Add magazine</a>
+    <a href="/user/account">Account</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>
