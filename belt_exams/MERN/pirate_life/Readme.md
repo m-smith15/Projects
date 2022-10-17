@@ -13,7 +13,7 @@
 
 
 ## General Information
-- You can find the site on http://3.143.142.17
+- You can find the site on http://18.221.71.54/
   - There is no login required, feel free to create a pirate and test validations!
 
 
