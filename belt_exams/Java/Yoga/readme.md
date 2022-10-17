@@ -13,7 +13,7 @@
 
 ## General Information
 - You can find the site on http://18.221.71.54/
-  - Feel free to use my main tester - Shrimp Shrimpton (shrimp@ocean.com) pw shrimp
+  - Feel free to use my main tester - Shrimp Shrimpton; user: shrimp@ocean.com pw: shrimp
 - I hope you like steelblue!
 
 
