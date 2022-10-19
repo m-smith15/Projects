@@ -11,7 +11,7 @@
 
 
 ## General Information
-- You can find the site on http://3.15.181.82/
+- You can find the site on http://3.23.104.32/
   - You can login with my favorte test user - Shrimp Shrimpton. Username: shrimp@ocean.com pw: shrimp
 
 
