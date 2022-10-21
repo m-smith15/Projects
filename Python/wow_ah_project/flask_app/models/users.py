@@ -2,7 +2,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 #since this is MODEL need to reach out to DB
 
 # import tables from users schema
-class Users:
+class User:
     def __init__(self,data):
         self.id = data['id']
         self.first_name = data['first_name']

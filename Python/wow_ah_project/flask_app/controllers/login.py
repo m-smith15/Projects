@@ -1,3 +1,4 @@
+from flask_app.config.mysqlconnection import connectToMySQL 
 from flask import render_template, redirect, request, session, flash
 from flask_app import app
 
@@ -138,48 +139,48 @@ def logout():
 
 #     return redirect('/search')
 
-@app.route('/user/account')
-def view_account():
-    if session.get("is_logged_in") is not None:
+# @app.route('/user/account')
+# def view_account():
+#     if session.get("is_logged_in") is not None:
 
-        user_data = {
-            "email": session["email"]
-        }
-        user_info = User.get_account_info(user_data)
-        users_magazines = Magazine.get_magazine_by_user(user_data)
-        subscriber_count = Magazine.get_subscribers_count()
+#         user_data = {
+#             "email": session["email"]
+#         }
+#         user_info = User.get_account_info(user_data)
+#         users_magazines = Magazine.get_magazine_by_user(user_data)
+#         subscriber_count = Magazine.get_subscribers_count()
 
-        return render_template("update_user.html", user_info = user_info, users_magazines = users_magazines, subscribers = subscriber_count)
+#         return render_template("update_user.html", user_info = user_info, users_magazines = users_magazines, subscribers = subscriber_count)
 
-    return render_template("login.html")
+#     return render_template("login.html")
 
-@app.route('/user/update', methods=["POST"])
-def update_user():
-    user_email = {
-        "email": request.form["email"]
-    }
-    user_validations = User.validate_update(user_email)
-    if not user_validations:
-        flash("please correct errors and resubmit")
-        return redirect("/user/account")
-    user_data = {
-        "old_email":session['email'],
-        "email": request.form["email"],
-        "first_name": request.form["first_name"],
-        "last_name": request.form["last_name"]
-    }
-    User.update_user(user_data)
+# @app.route('/user/update', methods=["POST"])
+# def update_user():
+#     user_email = {
+#         "email": request.form["email"]
+#     }
+#     user_validations = User.validate_update(user_email)
+#     if not user_validations:
+#         flash("please correct errors and resubmit")
+#         return redirect("/user/account")
+#     user_data = {
+#         "old_email":session['email'],
+#         "email": request.form["email"],
+#         "first_name": request.form["first_name"],
+#         "last_name": request.form["last_name"]
+#     }
+#     User.update_user(user_data)
 
-    new_user_info = User.get_account_info(user_email)
-    #once in DB reset session cookies
-    session.clear()
-    #assign new values
-    session['is_logged_in'] = True
-    session['email'] = user_email["email"]
-    session['first_name'] = request.form["first_name"]
-    session['user_id'] = new_user_info.id
+#     new_user_info = User.get_account_info(user_email)
+#     #once in DB reset session cookies
+#     session.clear()
+#     #assign new values
+#     session['is_logged_in'] = True
+#     session['email'] = user_email["email"]
+#     session['first_name'] = request.form["first_name"]
+#     session['user_id'] = new_user_info.id
 
-    return redirect('/user/account')
+#     return redirect('/user/account')
 
 # @app.route('/magazine/delete/<int:magazinenum>')
 # def delete_magazine(magazinenum):
