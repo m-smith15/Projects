@@ -21,6 +21,10 @@
 ## Technologies Used
   - Flask Framework
   - API calls from Blizzard's API's
+  - Login and Registration Page
+    - Bcrypt pw hashing
+    - Flash messaging on field validation
+    - Regex check for email validation
 
 
 ## Big takeaways
