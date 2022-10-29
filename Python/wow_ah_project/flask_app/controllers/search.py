@@ -7,8 +7,10 @@ from flask_paginate import Pagination, get_page_parameter
 
 @app.route('/search')
 def search_page():
-    print("Client ID is " + os.environ.get('Client_ID'))
-    print("Client Secret is " + os.environ.get('Client_Secret'))
+    if session.get("is_logged_in") is None:
+        return redirect("/")
+    # print("Client ID is " + os.environ.get('Client_ID'))
+    # print("Client Secret is " + os.environ.get('Client_Secret'))
 
 
     def get_bearer():
@@ -29,7 +31,7 @@ def search_page():
 
     os.environ['Bearer'] = get_bearer()
 
-    print("Bearer is " + os.environ['Bearer'])
+    # print("Bearer is " + os.environ['Bearer'])
 
     #adding in an api call for realm list to build options
     realmListAPI = requests.get(f"https://us.api.blizzard.com/data/wow/realm/index?namespace=dynamic-classic-us&locale=en_US&access_token={os.environ.get('Bearer')}")

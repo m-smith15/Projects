@@ -27,8 +27,8 @@
                     <option value="7">Booty Bay AH</option>
                 </select> <br>
                 <label for="query">Item you'd like to search for: </label>
-                <input type="text" name="query">
-                <input type="submit" value="test it out">
+                <input type="text" name="query" placeholder="enter item ID">
+                <input type="submit" value="Search">
             </form>
         </div>
     <hr>
@@ -92,6 +92,6 @@
     </div>
     <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
     <hr>
-    <a class="btn" href="/logout">Logout</a>
+    <a class="btn btn-dark" href="/logout">Logout</a>
 </body>
 </html>
