@@ -15,14 +15,6 @@ def login_page():
         return redirect("/search")
     return render_template("login.html")
 
-# @app.route("/dashboard")
-# def dashboard_page():
-#     if session.get("is_logged_in") is not None:
-#         return redirect("/search") #is logged in
-#     else:
-#         print("user is not logged in")
-#         return redirect('/')
-
 
 @app.route("/register", methods=["POST"])
 def register():
@@ -99,45 +91,7 @@ def logout():
         
     return redirect('/')
 
-# @app.route('/show/<int:magazineid>')
-# def view_one_magazine(magazineid):
-
-#     if session.get("is_logged_in") is not None:
-#         data = {
-#             "id": magazineid
-#         }
-#         magazine = Magazine.get_magazine_by_id(data)
-#         subscribers = Magazine.get_subscribers(data)
-#         return render_template("one_magazine.html", get_magazine = magazine, get_subscriptions = subscribers)
-
-#     return render_template("login.html")
-
-# @app.route('/magazine/new')
-# def add_new_magazine():
-#     if session.get("is_logged_in") is not None:
-#         return render_template("add_magazine.html")
-
-#     return render_template("login.html")
-
-# @app.route('/magazine/add', methods=["POST"])
-# def submit_new_magazine():
-
-#     # validate submission first 
-#     validate_magazine = Magazine.validate_submission()
-#     if not validate_magazine:
-#         flash("please correct errors and resubmit")
-#         return redirect("/magazine/new")
-
-#     data = {
-#         "title": request.form["title"],
-#         "description": request.form["description"],
-#         "users_id": session["user_id"]
-#     }
-
-#     # run query to add
-#     Magazine.add_a_magazine(data)
-
-#     return redirect('/search')
+#keeping these in here for now to add in update/deletion of user account
 
 # @app.route('/user/account')
 # def view_account():
