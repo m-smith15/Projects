@@ -81,6 +81,17 @@ def login():
 
     return redirect("/search")
 
+@app.route("/login/demo")
+def demo_login():
+    
+    session['is_logged_in'] = True
+    session['email'] = 'demo@email.com'
+    session['first_name'] = 'demo_user'
+    session['user_id'] = '123'
+
+    return redirect("/search")
+
+
 @app.route("/logout")
 def logout():
 
