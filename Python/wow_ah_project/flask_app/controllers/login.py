@@ -96,7 +96,7 @@ def logout():
     session.pop('is_logged_in', None)
     session.pop('first_name', None)
     session.pop('user_id', None)
-    
+        
     return redirect('/')
 
 # @app.route('/show/<int:magazineid>')
