@@ -28,7 +28,7 @@
     - Regex check for email validation
  
 ## Demo
-<img alt="GIF" src="./offline_auction_hosue demo.gif"/>
+<img alt="GIF" src="./offline_auction_hosue_demo.gif"/>
 
 ## Big takeaways
 - Working with APIs
