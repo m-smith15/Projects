@@ -5,7 +5,8 @@
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
-* [Big takeaways](#Big-takeaways)
+* [Demo](#Demo)
+* [Big Takeaways](#big-takeaways)
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
@@ -25,7 +26,9 @@
     - Bcrypt pw hashing
     - Flash messaging on field validation
     - Regex check for email validation
-
+ 
+## Demo
+<img alt="GIF" src="./offline_auction_hosue demo.gif"/>
 
 ## Big takeaways
 - Working with APIs
