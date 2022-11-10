@@ -28,8 +28,8 @@
     - Regex check for email validation
  
 ## Demo
-
-<img alt="GIF" src="/assets/offline_auction_house_demo.gif"/>
+(Apologies about the image quality)
+![](https://github.com/m-smith15/Projects/blob/master/Python/wow_ah_project/assets/offline_auction_house_demo.gif)
 
 ## Big takeaways
 - Working with APIs
