@@ -29,7 +29,7 @@
  
 ## Demo
 
-<img alt="GIF" src="./assets/offline_auction_hosue_demo.gif"/>
+<img alt="GIF" src="/assets/offline_auction_house_demo.gif"/>
 
 ## Big takeaways
 - Working with APIs
