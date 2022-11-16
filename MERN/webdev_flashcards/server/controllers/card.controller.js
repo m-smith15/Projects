@@ -24,3 +24,13 @@ module.exports.getCard = (request, response) => {
         .then(card => response.json(card))
         .catch(err => response.json(err))
 }
+module.exports.updateCard = (request, response) => {
+    Card.findOneAndUpdate({_id:request.params.id}, request.body, {new:true})
+        .then(updatedCard => response.json(updatedCard))
+        .catch(err => response.json(err))
+}
+module.exports.deleteCard = (request, response) => {
+    Card.deleteOne({_id: request.params.id })
+        .then(deleteConfirmation => response.json(deleteConfirmation))
+        .catch(err => response.json(err))
+}
