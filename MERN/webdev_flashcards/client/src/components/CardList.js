@@ -16,16 +16,17 @@ const CardList = (props) => {
     return (
         <div>
             {props.card.map((card, i) =>
-                <p key={i}>
-                    <Link to={"/card/" + card._id + "/edit"}>
-                        {card.cardTitle} | {card._id}
-                    </Link>
-                    <br />{card.price}
-                    <br />{card.description}
-                    <br /><button onClick={(e) => { deleteCard(card._id) }}>
+                <div key={i}>
+                    <Link to={"/card/" + card._id + "/edit"}> 
+                        Edit
+                    </Link> | {card._id} <br/>
+                    <div>{card.cardTitle}</div>
+                    <div>Description: {card.cardDescription}</div>
+                    <br />
+                    <button onClick={(e) => { deleteCard(card._id) }}>
                         Delete
                     </button>
-                </p>
+                </div>
             )}
         </div>
     )

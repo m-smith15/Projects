@@ -9,7 +9,7 @@ export default () => {
     //make post request to create api in 
     const formSubmitHandler = e => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/card', {
+        axios.post('http://localhost:8000/api/create/card', {
             cardTitle,
             cardDescription
         })
@@ -28,7 +28,7 @@ export default () => {
                 </div>
                 <div>
                     <label>Description</label>
-                    <input type="text" onChange={(e) => setDescription(e.target.value)} value={cardDescription} />
+                    <textarea onChange={(e) => setDescription(e.target.value)} value={cardDescription} />
                 </div>
                 <input type="submit" value="Add Card" />
             </form>

@@ -1,6 +1,6 @@
 import './App.css';
 
-import {Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import Main from './views/Main'
 // import Detail from './views/Detail'
@@ -8,7 +8,7 @@ import Main from './views/Main'
 function App() {
   return (
     <div className="App">
-<Main/>
+      <Main />
     </div>
   );
 }
