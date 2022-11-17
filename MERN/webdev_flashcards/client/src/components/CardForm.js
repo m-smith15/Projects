@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default () => {
+const CardForm = () => {
     const [cardTitle, setCardTitle] = useState("");
     const [cardDescription, setDescription] = useState("");
 
@@ -16,7 +16,6 @@ export default () => {
             .then(res => console.log(res))
             .catch(err => console.log(err))
     }
-
     //need a form submission handler
     //also need onChange handlers for values in input fields - set__
     return (
@@ -35,3 +34,5 @@ export default () => {
         </div>
     )
 }
+
+export default CardForm

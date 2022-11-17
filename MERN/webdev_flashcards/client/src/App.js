@@ -1,14 +1,17 @@
 import './App.css';
 
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate} from 'react-router-dom'
 
 import Main from './views/Main'
-// import Detail from './views/Detail'
+import Create from './views/Create'
 
 function App() {
   return (
     <div className="App">
-      <Main />
+      <Routes>
+        <Route element={<Main/>} path="/" />
+        <Route element={<Create/>} path="/create" />
+        </Routes>
     </div>
   );
 }
