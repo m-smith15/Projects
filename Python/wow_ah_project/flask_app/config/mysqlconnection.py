@@ -1,25 +1,39 @@
 # a cursor is the object we use to interact with the database
-import pymysql.cursors
+# import pymysql
+# from dotenv import load_dotenv
+# load_dotenv()
+from mysql.connector import Error
+import mysql.connector
 import os
 # this class will give us an instance of a connection to our database
 class MySQLConnection:
     def __init__(self, db):
         # change the user and password as needed
-        connection = pymysql.connect(host = 'localhost',
-                                    user = os.environ.get('User'), 
-                                    password = os.environ.get('PassW'), 
-                                    db = db,
-                                    charset = 'utf8mb4',
-                                    cursorclass = pymysql.cursors.DictCursor,
-                                    autocommit = True)
+        # connection = pymysql.connect(host = os.environ.get('HOST'),
+        #                             db = os.environ.get("DATABASE"),
+        #                             user = os.environ.get('User'),
+        #                             password = os.environ.get('PassW'),
+        #                             ssl_ca=os.environ.get('SSL_CERT'),
+        #                             charset = 'utf8mb4',
+        #                             cursorclass = pymysql.cursors.DictCursor,
+        #                             autocommit = True)
+        connection = mysql.connector.connect(
+            host= os.environ.get("HOST"),
+            user=os.environ.get("User"),
+            passwd= os.environ.get("PassW"),
+            db= os.environ.get("DATABASE"),
+            ssl_ca=os.environ.get("SSL_CERT")
+            )
+        print("connected to DB")
+
         # establish the connection to the database
         self.connection = connection
     # the method to query the database
     def query_db(self, query, data=None):
         with self.connection.cursor() as cursor:
             try:
-                query = cursor.mogrify(query, data)
-                print("Running Query:", query)
+            #     query = cursor.mogrify(query, data)
+            #     print("Running Query:", query)
     
                 cursor.execute(query, data)
                 if query.lower().find("insert") >= 0:
@@ -39,7 +53,7 @@ class MySQLConnection:
             #     return False
             finally:
                 # close the connection
-                self.connection.close() 
+                self.connection.close()
 # connectToMySQL receives the database we're using and uses it to create an instance of MySQLConnection
 def connectToMySQL(db):
     return MySQLConnection(db)
