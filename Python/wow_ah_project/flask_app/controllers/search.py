@@ -9,8 +9,8 @@ from flask_app import app
 def search_page():
     if session.get("is_logged_in") is None:
         return redirect("/")
-    print("Client ID is " + os.environ.get('Client_ID'))
-    print("Client Secret is " + os.environ.get('Client_Secret'))
+    # print("Client ID is " + os.environ.get('Client_ID'))
+    # print("Client Secret is " + os.environ.get('Client_Secret'))
 
 
     def get_bearer():
@@ -24,9 +24,9 @@ def search_page():
         }
 
         response = requests.post(url, data=data)
-        print(response)
+        # print(response)
         jsonResponse = response.json()
-        print(jsonResponse)
+        # print(jsonResponse)
         return jsonResponse['access_token']
 
     os.environ['Bearer'] = get_bearer()
@@ -68,6 +68,7 @@ def searching():
     #Leaving this in for now. Will be tricky based on how the search API works for WoW. Seems like you get *Like results of what you search from blizz api
     searchItem = requests.get(f"https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&name.en_US={itemSearched}&orderby=id&_page=1&access_token={os.environ.get('Bearer')}")
     print("Search API complete")
+    print(os.environ.get('Bearer'))
 
     dict = requests.get(f"https://us.api.blizzard.com/data/wow/connected-realm/{serverChosen}/auctions/{factionChosen}?namespace=dynamic-classic-us&locale=en_US&access_token={os.environ.get('Bearer')}").json()
     print("Auction API call complete")
