@@ -2,7 +2,7 @@ import requests
 import os
 from flask import render_template, redirect, session, jsonify, request, json
 from flask_app import app
-from flask_paginate import Pagination, get_page_parameter
+# from flask_paginate import Pagination, get_page_parameter
 #rom rest_framework.views.paginations import LimitOffsetResultPaginator
 
 @app.route('/search')
