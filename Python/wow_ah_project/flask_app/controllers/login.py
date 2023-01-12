@@ -40,7 +40,7 @@ def register():
 
     #pw hashing and dropping into DB
     pw_hash = bcrypt.generate_password_hash(request.form['password'])
-    print(pw_hash)
+    # print(pw_hash)
     user_data = {
         "first_name": request.form["first_name"],
         "last_name": request.form["last_name"],
@@ -65,6 +65,7 @@ def login():
         "email": request.form["email"]
     }
     user_exists = User.validate_login(user_data)
+    print("user validated")
 
     if not user_exists:
         flash("invalid email")
