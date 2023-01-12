@@ -9,8 +9,8 @@ from flask_app import app
 def search_page():
     if session.get("is_logged_in") is None:
         return redirect("/")
-    # print("Client ID is " + os.environ.get('Client_ID'))
-    # print("Client Secret is " + os.environ.get('Client_Secret'))
+    print("Client ID is " + os.environ.get('Client_ID'))
+    print("Client Secret is " + os.environ.get('Client_Secret'))
 
 
     def get_bearer():
@@ -24,9 +24,9 @@ def search_page():
         }
 
         response = requests.post(url, data=data)
-        #print(response)
+        print(response)
         jsonResponse = response.json()
-        #print(jsonResponse)
+        print(jsonResponse)
         return jsonResponse['access_token']
 
     os.environ['Bearer'] = get_bearer()
