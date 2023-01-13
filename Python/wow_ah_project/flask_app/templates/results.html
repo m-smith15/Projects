@@ -13,6 +13,7 @@
     <script src="https://wow.zamimg.com/widgets/power.js"></script>
 </head>
 <body>
+    <div id="resultBlock">
         <div id="rawBlock">
             <h1>Raw Results</h1> 
             {% for result in results %}
@@ -26,6 +27,7 @@
             <div id="{{itemSearched}}" class="wowhead-tooltip tooltip-slider wowhead-tooltip-width-restriction wowhead-tooltip-width-320"></div>
             <a href="#" data-wowhead="item={{itemSearched}}"></a>
         </div>
+    </div>
     <hr>
     <hr>
     <a class="btn btn-light" href="/search" domain="classic">Search Again?</a>
