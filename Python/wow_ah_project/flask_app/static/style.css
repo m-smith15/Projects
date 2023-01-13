@@ -28,7 +28,9 @@ body {
     background-color:black;
     margin-top:5px;
 }
-
+#resultBlock{
+display:flex;
+}
 .realmOptions {
     display:flex;
     background-color:black;
