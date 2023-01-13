@@ -13,6 +13,11 @@ body {
 #resultBlock {
     display:flex;
 }
+#resultBlock h1{
+    text-align:center;
+    color:grey;
+    background-color:black;
+}
 .realmOptions {
     display:flex;
     background-color:whitesmoke;
@@ -61,10 +66,20 @@ ul{
     background-color:black;
 }
 .loginContainer {
-    background-color:whitesmoke;
+    background-color:darkgreen;
+    color:gold;
     opacity:.85;
     border:black solid 2px;
     width:20%;
+}
+.loginContainer h1{
+    text-align:center;
+    color:gold;
+}
+.btn {
+    color:black;
+    background-color:rgb(41, 187, 126);
+    border:black;
 }
 .regLogin{
     display:flex;
@@ -76,5 +91,13 @@ margin-top:15%;
 .logout{
 margin-left:3%;
 margin-top:3%;
+}
+.listResults{
+overflow:scroll;
+}
+.sumResults, .listResults{
+    background-color:darkgreen;
+    color:gold;
+    opacity:.95;
 }
 
