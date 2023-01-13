@@ -11,6 +11,8 @@ body {
     width:25%;
     overflow:scroll;
     display:grid;
+    max-height: 80vh;
+    overflow: auto;
 }
 #rawBlock h1{
     text-align:center;
@@ -18,9 +20,11 @@ body {
     background-color:black;
     margin-top:5px;
     margin-bottom:0;
+
 }
 #summationBlock{
     width:45%;
+    height:30%;
 }
 #summationBlock h1{
     text-align:center;
