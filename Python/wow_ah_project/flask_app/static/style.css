@@ -15,10 +15,18 @@ body {
 }
 .realmOptions {
     display:flex;
+    background-color:whitesmoke;
+    opacity:.85;
+    border:black solid 2px;
+    width:25%;
+    padding:1%;
 }
 .herbs{
     display:flex;
     text-align:right;
+    background-color:whitesmoke;
+    opacity:.85;
+    border:black solid 2px;
 }
 ul{
     list-style:none;
@@ -26,6 +34,11 @@ ul{
 .items{
     text-align:center;
     display:flex;
+    background-color:darkgreen;
+    color:gold;
+    opacity:.95;
+    border:black solid 2px;
+    justify-content:space-between;
 }
 .pagination-page-info {
     padding: .6em;
@@ -44,9 +57,11 @@ ul{
 }
 .heading {
     text-align:center;
+    color:grey;
+    background-color:black;
 }
 .loginContainer {
-    background-color:gray;
+    background-color:whitesmoke;
     opacity:.85;
     border:black solid 2px;
     width:20%;
@@ -57,5 +72,9 @@ ul{
 }
 .regLogin:nth-child(2){
 margin-top:15%;
+}
+.logout{
+margin-left:3%;
+margin-top:3%;
 }
 
