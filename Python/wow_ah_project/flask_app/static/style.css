@@ -4,7 +4,8 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body {
-    background-color:steelblue
+    background-image: url('/static/images/ironforge-auctionhouse.jpg');
+    background-size:cover;
 }
 #rawBlock{
     width:25%;
@@ -44,5 +45,17 @@ ul{
 .heading {
     text-align:center;
 }
-
+.loginContainer {
+    background-color:gray;
+    opacity:.85;
+    border:black solid 2px;
+    width:20%;
+}
+.regLogin{
+    display:flex;
+    margin-top:5%;
+}
+.regLogin:nth-child(2){
+margin-top:15%;
+}
 
