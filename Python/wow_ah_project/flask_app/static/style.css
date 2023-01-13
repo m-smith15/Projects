@@ -9,19 +9,20 @@ body {
 }
 #rawBlock{
     width:25%;
+    overflow:scroll;
 }
-#resultBlock {
-    display:flex;
-}
-#resultBlock h1{
+#rawBlock h1{
     text-align:center;
     color:grey;
     background-color:black;
+    margin-top:5px;
+    margin-bottom:0;
 }
 .realmOptions {
     display:flex;
-    background-color:whitesmoke;
-    opacity:.85;
+    background-color:black;
+    color:whitesmoke;
+    opacity:.75;
     border:black solid 2px;
     width:25%;
     padding:1%;
@@ -92,9 +93,7 @@ margin-top:15%;
 margin-left:3%;
 margin-top:3%;
 }
-.listResults{
-overflow:scroll;
-}
+
 .sumResults, .listResults{
     background-color:darkgreen;
     color:gold;
