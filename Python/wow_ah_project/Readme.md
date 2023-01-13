@@ -28,8 +28,7 @@
     - Regex check for email validation
  
 ## Demo
-(Apologies about the image quality)
-![](https://github.com/m-smith15/Projects/blob/master/Python/wow_ah_project/assets/offline_auction_house_demo.gif)
+ - The site is live at https://projects-phi-nine.vercel.app/!
 
 ## Big takeaways
 - Working with APIs
