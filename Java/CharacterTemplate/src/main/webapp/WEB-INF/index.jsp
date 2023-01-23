@@ -20,18 +20,16 @@
 <title>Home</title>
 </head>
 <body style="background-color: steelblue;">
-<p>All Spell data here was scraped using a <a href="">web scraper</a> that scraped the DOS2 wiki! Some of the data is incomplete, so bear with me while I continue to fine-tune<br>
-A big thank you to the folks at <a href="https://divinityoriginalsin2.wiki.fextralife.com/Divinity+Original+Sin+2+Wiki">The Divinity Original Sin 2 Wiki</a>
-who built, contributed, and have maintained the wiki I pulled the data from!</p>
+<h1>Divinity Original Sin 2 Character Builder</h1>
 <hr>
 
 	<h1>Select from a list of characters already created:</h1>
 	<div class="container" style="background-color:cadetblue;">
 		<c:forEach var="character" items="${characters }">
-			<c:out value="${character.name}" /> <a href="/character/view/${character.id}">View Character?</a>
+			<c:out value="${character.name}" />
 			<br>
 			<ul class="panel">
-				<li>Aerotheurge:${character.aerotheurge_level}</li>
+				<li>Aerotheurge: ${character.aerotheurge_level}</li>
 				<li>Geomancer: ${character.geomancer_level}</li>
 				<li>Huntsman: ${character.huntsman_level}</li>
 				<li>Hydrosophist: ${character.hydrosophist_level}</li>
@@ -42,21 +40,30 @@ who built, contributed, and have maintained the wiki I pulled the data from!</p>
 				<li>Summoning: ${character.summoning_level}</li>
 				<li>Warfare: ${character.warfare_level}</li>
 			</ul>
+			<a class="btn" href="/character/view/${character.id}">View Character?</a>
 		</c:forEach>
 	</div>
-	<a class="btn" style="border: solid black 1px" href="/character/create">Tryna
-		Craft?</a>
+	<div class="newCharBtn">
+	<a class="btn" href="/character/create">Create a new character?</a>
+	</div>
 	<hr>
-	<h1>Just look at these spells</h1>
+	<h1>Here are the spells scraped from the Divinity Original Sin 2 Wiki</h1>
+	<div class="acknoledgements">
+	<p>All Spell data here was scraped using a <a href="https://github.com/m-smith15/Projects/tree/master/Java/WebScraper2">web scraper</a> that scraped the DOS2 wiki! Some of the data is incomplete, so bear with me while I continue to fine-tune.<br>
+A big thank you to the folks at <a href="https://divinityoriginalsin2.wiki.fextralife.com/Divinity+Original+Sin+2+Wiki">The Divinity Original Sin 2 Wiki</a>
+who built, contributed, and have maintained the wiki I pulled the data from!
+</p>
+</div>
 	<div class="wrapper">
 		<c:forEach var="school" items="${schools}">
 			<div class="container">
 				<b>${school}</b>
+				<details class="allSchoolSpells">
 				<c:set var="varA" value="${school}" />
 				<c:forEach var="spell" items="${spells}">
 					<ul>
 						<c:if test="${spell.school == pageContext.getAttribute('varA')}">
-							<li><c:out value="${spell.name}" /> |: <c:out
+							<li><c:out value="${spell.name}" />: <c:out
 									value="${spell.description }" />
 								<ul>
 									<li>Skill Level: <c:out value="${spell.requiredLevel}" /></li>
@@ -65,6 +72,7 @@ who built, contributed, and have maintained the wiki I pulled the data from!</p>
 						</c:if>
 					</ul>
 				</c:forEach>
+				</details>
 			</div>
 		</c:forEach>
 	</div>
