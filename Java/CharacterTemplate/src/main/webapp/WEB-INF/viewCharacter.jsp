@@ -23,10 +23,10 @@
 	<h1>Check out this Character!</h1>
 	<div class="wrapper">
 
-		<div class="container">
+		<div class="container characterContainer">
 			<h2>${character.name}</h2>
-			<ul>
-				<li>Aerotheurge:${character.aerotheurge_level}</li>
+			<ul class="panel">
+				<li>Aerotheurge: ${character.aerotheurge_level}</li>
 				<li>Geomancer: ${character.geomancer_level}</li>
 				<li>Huntsman: ${character.huntsman_level}</li>
 				<li>Hydrosophist: ${character.hydrosophist_level}</li>
@@ -40,12 +40,12 @@
 
 		</div>
 
-		<div class="container">
+		<div class="container learnableSpellContainer">
 			<h2>Spells You Can Learn!</h2>
 			<ul>
 				<c:forEach var="spell" items="${spellsCharacterCanLearn }">
 					<li>${spell.name}
-						<ul>
+						<ul class="learableSpells">
 							<li>${spell.description }</li>
 							<li>Memory Slots: ${spell.memorySlots }</li>
 							<li>Resists: ${spell.resist }</li>
