@@ -8,9 +8,50 @@
 
 .container{
 	border: solid black 2px;
-	width: 25%;
+	width: 33%;
 }
 .wrapper{
 	display:flex;
 	flex-wrap: wrap;
+}
+.panel {
+	columns: 3;
+}
+.learableSpells{
+	columns:2;
+}
+.characterContainer{
+	height:50%;
+}
+.learnableSpellContainer{
+	width:75%;
+}
+h1, h2{
+	text-align:center;
+}
+.allSchoolSpells{
+	columns: 2;
+	column-rule: 2px solid black;
+}
+
+.allSchoolSpells ul{
+	break-inside:avoid;
+}
+.newCharBtn{
+	padding-left:5%;
+}
+.btn {
+	border: solid black 1px;
+	background-color:lightgray;
+	margin-bottom:6px;
+}
+.acknoledgements{
+	display:flex;
+	justify-content:center;
+}
+.acknoledgements p {
+	text-align:center;
+	background:black;
+	color:lightgray;
+	padding:3px;
 }
