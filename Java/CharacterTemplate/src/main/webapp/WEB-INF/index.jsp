@@ -17,14 +17,14 @@
 <!-- change to match your file/naming structure -->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-<title>Home</title>
+<title>Character Builder</title>
 </head>
 <body>
 <h1>Divinity Original Sin 2 Character Builder</h1>
 <hr>
 
 	<h1>Select from a list of characters already created:</h1>
-	<div class="container" style="background-color:cadetblue;">
+	<div class="container characterContainer">
 		<c:forEach var="character" items="${characters }">
 			<c:out value="${character.name}" />
 			<br>
