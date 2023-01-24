@@ -30,6 +30,12 @@ public class CharacterTemplateController {
 	@Autowired
 	private SpellRepository spellRepository;
 	
+	//doing a cheeky redirect
+	@RequestMapping(value="/", method=RequestMethod.GET)
+	private String index() { 
+	    return "redirect:/home";
+	}
+	
 	@RequestMapping( value="/home", method=RequestMethod.GET)
 	private String home(Model model) throws SQLException {
 		
@@ -55,8 +61,8 @@ public class CharacterTemplateController {
 					.distinct()
 					.collect(Collectors.toList());
 		
-		System.out.println(uniqueSchools);
-		System.out.println(uniqueSchools.get(0));
+//		System.out.println(uniqueSchools);
+//		System.out.println(uniqueSchools.get(0));
 		
 //		List<Spell> findBySchool = spellRepository.findBySchool(uniqueSchools.get(0));
 //		System.out.println(findBySchool.get(0).getSchool());
@@ -66,8 +72,8 @@ public class CharacterTemplateController {
 		model.addAttribute("schools", uniqueSchools);
 		
 		
-		System.out.println(spellsToAdd.get(0).getActionPoints());
-		System.out.println(spellsToAdd.get(0).getId());
+//		System.out.println(spellsToAdd.get(0).getActionPoints());
+//		System.out.println(spellsToAdd.get(0).getId());
 		
 		
 		return "index.jsp";
