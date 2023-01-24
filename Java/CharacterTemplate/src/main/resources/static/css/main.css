@@ -31,9 +31,21 @@ body{
 }
 .characterContainer{
 	height:50%;
+	background-color:cadetblue;
+	color:black;
 }
 .learnableSpellContainer{
 	width:75%;
+	background-color:lightgray;
+	opacity:.75;
+	columns: 2;
+	column-rule: 2px solid black;
+}
+.learnableSpellContainer ul li{
+	break-inside:avoid;
+}
+.learnableSpellContainer h2 {
+	color: black;
 }
 h1, h2{
 	text-align:center;
