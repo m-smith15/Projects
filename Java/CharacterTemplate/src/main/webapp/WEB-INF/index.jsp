@@ -19,7 +19,7 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <title>Home</title>
 </head>
-<body style="background-color: steelblue;">
+<body>
 <h1>Divinity Original Sin 2 Character Builder</h1>
 <hr>
 
@@ -47,7 +47,7 @@
 	<a class="btn" href="/character/create">Create a new character?</a>
 	</div>
 	<hr>
-	<h1>Here are the spells scraped from the Divinity Original Sin 2 Wiki</h1>
+	<h1 class="wrapperHeader">Here are the spells scraped from the Divinity Original Sin 2 Wiki</h1>
 	<div class="acknoledgements">
 	<p>All Spell data here was scraped using a <a href="https://github.com/m-smith15/Projects/tree/master/Java/WebScraper2">web scraper</a> that scraped the DOS2 wiki! Some of the data is incomplete, so bear with me while I continue to fine-tune.<br>
 A big thank you to the folks at <a href="https://divinityoriginalsin2.wiki.fextralife.com/Divinity+Original+Sin+2+Wiki">The Divinity Original Sin 2 Wiki</a>
