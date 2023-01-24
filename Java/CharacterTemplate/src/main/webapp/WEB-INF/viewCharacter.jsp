@@ -19,9 +19,9 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <title>View Character</title>
 </head>
-<body style="background-color: steelblue;">
+<body>
 	<h1>Check out this Character!</h1>
-	<div class="wrapper">
+	<div class="viewWrapper">
 
 		<div class="container characterContainer">
 			<h2>${character.name}</h2>
@@ -45,12 +45,14 @@
 			<ul>
 				<c:forEach var="spell" items="${spellsCharacterCanLearn }">
 					<li>${spell.name}
+					<details>
 						<ul class="learableSpells">
 							<li>${spell.description }</li>
 							<li>Memory Slots: ${spell.memorySlots }</li>
 							<li>Resists: ${spell.resist }</li>
 							<li>Scaling: ${spell.scale }</li>
 						</ul>
+						</details>
 					</li>
 				</c:forEach>
 			</ul>
