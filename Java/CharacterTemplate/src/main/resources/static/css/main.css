@@ -5,6 +5,11 @@
     padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+body{
+	background-image: url('/assets/dos_background.jpg');
+	background-repeat:repeat-x;
+	background-color:steelblue;
+}
 
 .container{
 	border: solid black 2px;
@@ -13,6 +18,10 @@
 .wrapper{
 	display:flex;
 	flex-wrap: wrap;
+}
+.wrapper .container{
+	opacity: .55;
+	background-color:lightgrey;
 }
 .panel {
 	columns: 3;
@@ -28,12 +37,12 @@
 }
 h1, h2{
 	text-align:center;
+	color:white;
 }
 .allSchoolSpells{
 	columns: 2;
 	column-rule: 2px solid black;
 }
-
 .allSchoolSpells ul{
 	break-inside:avoid;
 }
