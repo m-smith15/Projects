@@ -41,6 +41,7 @@
 				<li>Warfare: ${character.warfare_level}</li>
 			</ul>
 			<a class="btn" href="/character/view/${character.id}">View Character?</a>
+			<br/>
 		</c:forEach>
 	</div>
 	<div class="newCharBtn">
