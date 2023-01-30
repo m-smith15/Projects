@@ -1,6 +1,6 @@
 # Divinity Original Sin 2 - Character Template
   - Project was undertaken to prevent some of the "napkin theorycrafting" my friends and I were doing between sessions. This lets us "build" potential characters, and save them to try when we have our next session!
-    - This project was built in two parts - first being building a web scraper, and the second was using the scraped data to build the site! 
+    - This project was built in two parts - first being building a web scraper (check out the web scraper [repo](https://github.com/m-smith15/Projects/tree/master/Java/WebScraper2)), and the second was using the scraped data to build the site! 
 
 ## Table of Contents
 * [General Info](#general-information)
