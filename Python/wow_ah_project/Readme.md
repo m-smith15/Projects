@@ -1,11 +1,12 @@
 # Offline Auction House
   - This is a site where you can query for the most recent prices of items in Classic WoW!
+  - The site is live at https://projects-phi-nine.vercel.app/ if you'd like to check it out!
+      - Use the "Demo Login" if you'd just like a tour!
 
 
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
-* [Demo](#Demo)
 * [Big Takeaways](#big-takeaways)
 * [Setup](#setup)
 * [Usage](#usage)
@@ -27,8 +28,6 @@
     - Flash messaging on field validation
     - Regex check for email validation
  
-## Demo
- - The site is live at https://projects-phi-nine.vercel.app/!
 
 ## Big takeaways
 - Working with APIs
